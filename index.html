@@ -1,27 +1,458 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2113.6">
-  <style type="text/css">
-    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
-    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelly Lin — PhD Candidate</title>
+<meta name="description" content="Kelly Lin, PhD candidate at the Centre for Brain, Minds and Markets, University of Melbourne. Research on effort and risky decision-making.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6F0;
+    --cream-deep: #F2EBE0;
+    --ink: #2B2D3A;
+    --ink-soft: #5A5C6C;
+    --terracotta: #C97064;
+    --terracotta-deep: #B05A4E;
+    --sage: #8B9D83;
+    --line: #E3DACB;
+    --max-width: 760px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--terracotta); color: var(--cream); }
+
+  a { color: var(--terracotta-deep); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+  a:hover, a:focus-visible { border-bottom-color: var(--terracotta-deep); }
+  a:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; border-radius: 2px; }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- Topographic motif ---------- */
+  .contour-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .contour-bg svg { width: 100%; height: 100%; opacity: 0.5; }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(250, 246, 240, 0.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    font-weight: 500;
+    border-bottom: none;
+  }
+  .nav-links a:hover { color: var(--terracotta-deep); }
+
+  @media (max-width: 600px) {
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 0.82rem; }
+  }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    position: relative;
+    padding: 96px 24px 80px;
+    text-align: left;
+    overflow: hidden;
+  }
+  .hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+  }
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sage), var(--terracotta));
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--cream);
+    border: 3px solid var(--cream-deep);
+    box-shadow: 0 2px 12px rgba(43, 45, 58, 0.12);
+  }
+  .hero-text h1 {
+    font-size: 2.4rem;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+  .hero-role {
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    margin-bottom: 18px;
+  }
+  .hero-role .dept { color: var(--terracotta-deep); font-weight: 500; }
+  .hero-tagline {
+    font-size: 1.08rem;
+    color: var(--ink);
+    max-width: 56ch;
+  }
+
+  @media (max-width: 600px) {
+    header.hero { padding: 64px 20px 56px; }
+    .hero-inner { flex-direction: column; gap: 20px; }
+    .hero-text h1 { font-size: 1.9rem; }
+  }
+
+  /* ---------- Sections ---------- */
+  section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 56px 24px;
+  }
+  section + section { border-top: 1px solid var(--line); }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 22px;
+  }
+
+  /* About */
+  #about p { margin-bottom: 16px; color: var(--ink); max-width: 64ch; }
+  #about p:last-child { margin-bottom: 0; }
+
+  .interests-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+  }
+  .interest-tag {
+    font-size: 0.84rem;
+    padding: 5px 13px;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    color: var(--ink-soft);
+    background: var(--cream-deep);
+  }
+
+  /* Research */
+  .research-item {
+    display: flex;
+    gap: 18px;
+    padding: 20px 0;
+  }
+  .research-item + .research-item { border-top: 1px dashed var(--line); }
+  .research-mark {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    margin-top: 3px;
+  }
+  .research-mark svg { width: 100%; height: 100%; }
+  .research-item h3 {
+    font-size: 1.08rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .research-item p {
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    max-width: 58ch;
+  }
+
+  /* Publications */
+  .pub-item {
+    padding: 18px 0;
+  }
+  .pub-item + .pub-item { border-top: 1px solid var(--line); }
+  .pub-status {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--sage);
+    background: rgba(139, 157, 131, 0.12);
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .pub-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .pub-meta {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .pub-empty {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+
+  /* CV */
+  .cv-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--cream-deep);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 26px;
+  }
+  .cv-box-text h3 {
+    font-size: 1.02rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .cv-box-text p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+  .cv-download {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+  .cv-download:hover { background: var(--terracotta-deep); border-bottom: none; }
+  .cv-download:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  @media (max-width: 560px) {
+    .cv-box { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* Footer */
+  footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 40px 24px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  .footer-links a {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    border-bottom: none;
+  }
+  .footer-links a:hover { color: var(--terracotta-deep); }
+  .footer-note {
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 600px) {
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Hello World</b></span></h1>
-<p class="p2"><span class="s1">I'm hosted with GitHub Pages.</span></p>
-<p class="p2"><span class="s1">---</span></p>
-<p class="p2"><span class="s1">layout: default</span></p>
-<p class="p2"><span class="s1">title: Welcome</span></p>
-<p class="p2"><span class="s1">---</span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"># Hello!</span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">This is my GitHub Pages site using the **Dinky** theme.</span></p>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Kelly Lin</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="contour-bg" aria-hidden="true">
+    <svg viewBox="0 0 760 360" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="#C97064" stroke-width="1">
+        <path d="M -50 320 Q 150 260, 320 300 T 760 280" opacity="0.18"/>
+        <path d="M -50 340 Q 150 290, 320 325 T 760 310" opacity="0.15"/>
+        <path d="M -50 360 Q 150 320, 320 350 T 760 340" opacity="0.12"/>
+      </g>
+      <g fill="none" stroke="#8B9D83" stroke-width="1">
+        <path d="M 600 -20 Q 700 60, 660 150 T 700 320" opacity="0.16"/>
+        <path d="M 630 -20 Q 730 70, 690 160 T 730 320" opacity="0.13"/>
+        <path d="M 660 -20 Q 760 80, 720 170 T 760 320" opacity="0.1"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="avatar" role="img" aria-label="Profile placeholder">KL</div>
+    <div class="hero-text">
+      <h1>Kelly Lin</h1>
+      <p class="hero-role">PhD Candidate, <span class="dept">Centre for Brain, Minds and Markets</span> — University of Melbourne</p>
+      <p class="hero-tagline">I study how people decide when, and how hard, to try — combining behavioural experiments with fitness landscape analysis and Bayesian structural modelling of effort and risk.</p>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <p class="eyebrow">About</p>
+  <h2>About me</h2>
+  <p>I'm a PhD candidate at the Centre for Brain, Minds and Markets, University of Melbourne, working at the intersection of behavioural economics and decision science. My research examines effort and risky decision-making in complex problem-solving, using the Knapsack Problem as an experimental testbed within an effort-foraging paradigm.</p>
+  <p>I came to this work from a background in economics and finance, and I'm particularly interested in how the structure of a problem — its difficulty, its landscape of possible solutions — shapes the choices people make about whether an outcome is worth the effort.</p>
+  <div class="interests-row">
+    <span class="interest-tag">Behavioural Economics</span>
+    <span class="interest-tag">Effort & Risk</span>
+    <span class="interest-tag">Fitness Landscape Analysis</span>
+    <span class="interest-tag">Bayesian Modelling</span>
+    <span class="interest-tag">Experimental Design</span>
+  </div>
+</section>
+
+<section id="research">
+  <p class="eyebrow">Research</p>
+  <h2>Research interests</h2>
+
+  <div class="research-item">
+    <span class="research-mark" aria-hidden="true">
+      <svg viewBox="0 0 28 28"><path d="M3 20 Q9 8, 14 16 T25 6" fill="none" stroke="#C97064" stroke-width="1.6"/></svg>
+    </span>
+    <div>
+      <h3>Effort allocation under complexity</h3>
+      <p>How people decide how much cognitive effort to invest when facing problems of varying structural difficulty, operationalised through fitness landscape analysis of combinatorial search spaces.</p>
+    </div>
+  </div>
+
+  <div class="research-item">
+    <span class="research-mark" aria-hidden="true">
+      <svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="9" fill="none" stroke="#8B9D83" stroke-width="1.6"/><circle cx="14" cy="14" r="4" fill="none" stroke="#8B9D83" stroke-width="1.6"/></svg>
+    </span>
+    <div>
+      <h3>Risk preference & effort aversion</h3>
+      <p>Joint structural estimation of risk and effort aversion parameters using Bayesian methods, examining how the two interact in foraging-style decision tasks.</p>
+    </div>
+  </div>
+
+  <div class="research-item">
+    <span class="research-mark" aria-hidden="true">
+      <svg viewBox="0 0 28 28"><path d="M4 4 L4 24 L24 24" fill="none" stroke="#C97064" stroke-width="1.6"/><path d="M7 19 L12 13 L16 16 L22 8" fill="none" stroke="#C97064" stroke-width="1.6"/></svg>
+    </span>
+    <div>
+      <h3>Computational & experimental methods</h3>
+      <p>Designing behavioural experiments around the Knapsack Problem, with parameter recovery and model validation via Bayesian structural estimation.</p>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <p class="eyebrow">Publications</p>
+  <h2>Publications & working papers</h2>
+
+  <div class="pub-item">
+    <span class="pub-status">Working paper</span>
+    <p class="pub-title">Effort and risk in complex problem-solving: a fitness-landscape approach</p>
+    <p class="pub-meta">Lin, K. — in preparation, University of Melbourne</p>
+  </div>
+
+  <p class="pub-empty" style="margin-top: 18px;">More publications will be added as this work progresses.</p>
+</section>
+
+<section id="cv">
+  <p class="eyebrow">CV</p>
+  <h2>Curriculum vitae</h2>
+  <div class="cv-box">
+    <div class="cv-box-text">
+      <h3>Download my CV</h3>
+      <p>PDF, last updated — add date when uploaded</p>
+    </div>
+    <a class="cv-download" href="#" aria-label="Download CV (placeholder — add your PDF link)">
+      Download PDF
+    </a>
+  </div>
+</section>
+
+<footer>
+  <ul class="footer-links">
+    <li><a href="mailto:lin.x1@unimelb.edu.au">Email</a></li>
+    <li><a href="https://www.linkedin.com/in/kellyxilin/">LinkedIn</a></li>
+    <li><a href="https://github.com/xllin3">GitHub</a></li>
+  </ul>
+  <span class="footer-note">© 2026 Kelly Lin</span>
+</footer>
+
 </body>
 </html>
