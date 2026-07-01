@@ -10,8 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #FAF6F0;
-    --cream-deep: #F2EBE0;
+    --cream: #FCFBF9;
+    --cream-deep: #F6F4F0;
     --ink: #2B2D3A;
     --ink-soft: #5A5C6C;
     --terracotta: #C97064;
@@ -62,7 +62,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    background: rgba(250, 246, 240, 0.88);
+    background: rgba(252, 251, 249, 0.88);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
   }
@@ -117,14 +117,9 @@
     width: 96px;
     height: 96px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--sage), var(--terracotta));
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Fraunces', serif;
-    font-size: 2rem;
-    color: var(--cream);
+    display: block;
+    object-fit: cover;
     border: 3px solid var(--cream-deep);
     box-shadow: 0 2px 12px rgba(43, 45, 58, 0.12);
   }
@@ -360,7 +355,7 @@
     </svg>
   </div>
   <div class="hero-inner">
-    <div class="avatar" role="img" aria-label="Profile placeholder">KL</div>
+    <img class="avatar" src="images/profile.png" alt="Kelly Lin">
     <div class="hero-text">
       <h1>Kelly Lin</h1>
       <p class="hero-role">PhD Candidate, <span class="dept">Centre for Brain, Minds and Markets</span> — University of Melbourne</p>
@@ -372,12 +367,11 @@
 <section id="about">
   <p class="eyebrow">About</p>
   <h2>About me</h2>
-  <p>I'm a PhD candidate at the Centre for Brain, Minds and Markets, University of Melbourne, working at the intersection of behavioural economics and decision science. My research examines effort and risky decision-making in complex problem-solving, using the Knapsack Problem as an experimental testbed within an effort-foraging paradigm.</p>
-  <p>I came to this work from a background in economics and finance, and I'm particularly interested in how the structure of a problem — its difficulty, its landscape of possible solutions — shapes the choices people make about whether an outcome is worth the effort.</p>
+  <p>I'm a PhD candidate at the Centre for Brain, Minds and Markets, University of Melbourne, working at the intersection of behavioural economics/finance and decision science. My research examines effort and risky decision-making in complex problem-solving.</p>
+  <!-- <p>I came to this work from a background in economics and finance, and I'm particularly interested in how the structure of a problem — its difficulty, its landscape of possible solutions — shapes the choices people make about whether an outcome is worth the effort.</p> -->
   <div class="interests-row">
     <span class="interest-tag">Behavioural Economics</span>
     <span class="interest-tag">Effort & Risk</span>
-    <span class="interest-tag">Fitness Landscape Analysis</span>
     <span class="interest-tag">Bayesian Modelling</span>
     <span class="interest-tag">Experimental Design</span>
   </div>
